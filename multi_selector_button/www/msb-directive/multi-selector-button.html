@@ -1,0 +1,17 @@
+<div>
+  <div class="item item-divider">{{section}}</div>
+  <div class="item  item-icon-right">
+
+    <div>
+
+      <div ng-repeat="_obj in selectedobj" ng-if="selectedobj.length >0" style='padding: 3px; width: 130px; word-break: break-all; word-wrap: break-word;'>
+        {{_obj.name}},
+      </div>
+
+      <input ng-if="selectedobj.length==0" type="text" placeholder="{{placeholder}}" style="width: 100%">
+
+    </div>
+
+    <i class="icon ion-chevron-right icon-accessory"></i>
+  </div>
+</div>

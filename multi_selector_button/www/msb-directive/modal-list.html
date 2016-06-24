@@ -1,0 +1,34 @@
+<ion-modal-view>
+  <ion-content>
+    <div class="list">
+      <div class="item item-divider" >
+        Selected
+      </div>
+      <div class="item item-checkbox " ng-repeat="obj in selectedobj | orderBy:'name'"  >
+        <label class="checkbox">
+          <input type="checkbox" ng-checked="obj.selected" ng-model="obj.selected" ng-click="removeSelected(obj)">
+        </label>
+        <span ng-include="'itemrepeat.html'"></span>
+      </div>
+      <div class="item item-divider"> Items</div>
+      <div class="item item-checkbox " ng-repeat="obj in _objs_all | filter:searchField | orderBy:'name'" >
+        <label class="checkbox">
+          <input type="checkbox" ng-checked="obj.selected" ng-model="obj.selected" ng-click="addSelected(obj)">
+        </label>
+        <div ng-include="'itemrepeat.html'"></div>
+      </div>
+    </div>
+
+    <!-- customize this template -->
+    <script type="text/ng-template" id="itemrepeat.html" >
+      {{obj.name}}
+    </script>
+
+
+  </ion-content>
+  <ion-footer-bar>
+    <div class="button-bar">
+      <a class="button button-calm" ng-click="closeModal()">BACK</a>
+    </div>
+  </ion-footer-bar>
+</ion-modal-view>
