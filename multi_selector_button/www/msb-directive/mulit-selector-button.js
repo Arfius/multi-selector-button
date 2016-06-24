@@ -23,10 +23,6 @@ app.directive('multiSelection', function($ionicModal) {
       scope.listobj=JSON.parse(scope.listobj);
       scope._objs_all=scope.manipulation()(scope.selectedobj,scope.listobj);
 
-      //PLACEHOLDER FILTER PATOLOGIE
-      scope.placeholder="Inserisci patologia";
-      scope.searchField=""
-
 
       //MODALVIEW ---------------------------------------------------
       $ionicModal.fromTemplateUrl('msb-directive/modal-list.html', {
@@ -59,23 +55,9 @@ app.directive('multiSelection', function($ionicModal) {
       scope.$on('modal.removed', function() {
         // Execute action
       });
+
+
       //MODALVIEW ---------------------------------------------------
-
-
-      //FILTER BAR
-      scope._cancel = function()
-      {
-        scope.searchField=""
-        alert("_cancel")
-
-      }
-
-      scope._done = function()
-      {
-        alert("_done")
-      }
-
-      //FILTER BAR
       scope.removeSelected=function(obj)
       {
         var i= scope.selectedobj.indexOf(obj);
@@ -99,10 +81,7 @@ app.directive('multiSelection', function($ionicModal) {
         scope.selectedobj=scope.selectedobj;
 
       }
-
-
     }
-
   };
 });
 

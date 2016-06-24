@@ -11,7 +11,7 @@
         <span ng-include="'itemrepeat.html'"></span>
       </div>
       <div class="item item-divider"> Items</div>
-      <div class="item item-checkbox " ng-repeat="obj in _objs_all | filter:searchField | orderBy:'name'" >
+      <div class="item item-checkbox " ng-repeat="obj in _objs_all | orderBy:'name'" >
         <label class="checkbox">
           <input type="checkbox" ng-checked="obj.selected" ng-model="obj.selected" ng-click="addSelected(obj)">
         </label>

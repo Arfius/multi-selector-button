@@ -34,7 +34,7 @@ var app = angular.module('starter', ['ionic'])
         "name":"B Objs",
         "selected":false,
         "id":1
-      },
+      }
       ,
       {
         "name":"C Objs",
@@ -53,7 +53,8 @@ var app = angular.module('starter', ['ionic'])
         var newdata = [];
         angular.forEach(list, function (value, key) {
           var found = false;
-          angular.forEach(selected, function (valueSelected, key) {
+          angular.forEach(selected, function (valueSelected, key)
+          {
             if (value.id == valueSelected.id) {
               found = true;
             }
